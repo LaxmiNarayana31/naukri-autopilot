@@ -1,0 +1,16 @@
+[project]
+name = "naukri-profile-updater"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "groq>=1.2.0",
+    "playwright>=1.59.0",
+    "pypdf>=6.11.0",
+    "python-dotenv>=1.2.2",
+    "reportlab>=4.5.1",
+    "schedule>=1.2.2",
+    "streamlit>=1.49.0",
+    "tzdata>=2026.2",
+]
