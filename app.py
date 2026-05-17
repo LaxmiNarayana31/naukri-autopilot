@@ -14,6 +14,27 @@ import main
 
 load_dotenv(verbose=True)
 
+# ── Dynamic Playwright Install for Streamlit Cloud ────────────────
+import subprocess
+import os
+
+@st.cache_resource
+def install_playwright_browsers():
+    """Installs Chromium dynamically if running in a Linux cloud environment (Streamlit Cloud)."""
+    if os.name != 'nt':
+        try:
+            # Check if chromium already exists to avoid redundant runs
+            # Playwright stores browsers in ~/.cache/ms-playwright
+            cache_dir = Path.home() / ".cache" / "ms-playwright"
+            if not cache_dir.exists() or not any(cache_dir.iterdir()):
+                with st.spinner("Installing Chromium browser driver... This runs only once."):
+                    subprocess.run(["playwright", "install", "chromium"], check=True)
+        except Exception as e:
+            st.error(f"⚠️ Playwright auto-install failed: {e}. You may need to run 'playwright install' manually.")
+
+install_playwright_browsers()
+
+
 IST = ZoneInfo("Asia/Kolkata")
 SCHEDULE_TIMES = [
     dt_time(8, 30),
