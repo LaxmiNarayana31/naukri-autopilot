@@ -2,7 +2,7 @@
 
 > AI-powered Naukri profile automation — upload your resume, and let it auto-update your headline, summary, skills, and projects daily using your own credentials.
 
-**⚠️ This app only updates your Naukri profile. It does NOT apply to any jobs on your behalf.**
+**This app only updates your Naukri profile. It does NOT apply to any jobs on your behalf.**
 
 ---
 
